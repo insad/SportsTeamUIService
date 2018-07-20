@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en"
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:f="http://xmlns.jcp.org/jsf/core"
+    xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <title>Hello, World!</title>
+    </h:head>
+    <h:body>
+        <h:form>
+            <h:outputLabel for="name" value="Enter your name"  />
+            <h:inputText id="name" value="#{helloController.name}" />
+            <h:message for="name" />
+            <br />
+            <h:commandButton value="Say hello" action="#{helloController.createMessage}">
+                <f:ajax execute="@form" render="@form" />
+            </h:commandButton>
+            <br />
+            #{helloController.message}
+        </h:form>
+    </h:body>
+</html>
